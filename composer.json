@@ -1,0 +1,21 @@
+{
+    "name": "matej-ch/yii2-page-guide",
+    "description": "Ability to add guide to pages for user orientation",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","guide"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matej Chalachan",
+            "email": "matejCH.work@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "matejch\\pageGuide\\": ""
+        }
+    }
+}
