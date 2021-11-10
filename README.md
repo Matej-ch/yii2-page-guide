@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist matej-ch/yii2-page-guide "*"
+php composer.phar require --prefer-dist matejch/yii2-page-guide "dev-master"
 ```
 
 or add
 
 ```
-"matej-ch/yii2-page-guide": "*"
+"matejch/yii2-page-guide": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -24,8 +24,3 @@ to the require section of your `composer.json` file.
 
 Usage
 -----
-
-Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \matejch\pageGuide\AutoloadExample::widget(); ?>```
