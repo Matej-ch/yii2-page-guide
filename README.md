@@ -24,3 +24,7 @@ to the require section of your `composer.json` file.
 
 Usage
 -----
+
+First migrate table, neccesary for saving rules on pages
+
+./yii migrate --migrationPath=@vendor/matejch/yii2-page-guide/src/migrations
