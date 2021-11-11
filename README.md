@@ -28,3 +28,6 @@ Usage
 First migrate table, neccesary for saving rules on pages
 
 ./yii migrate --migrationPath=@vendor/matejch/yii2-page-guide/src/migrations
+
+link to list of rules and form for creating rules is {name of module you use in web.php}/page-guide/index
+
