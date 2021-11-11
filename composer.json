@@ -12,9 +12,14 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2.0",
-        "yiisoft/yii2": "~2.0.0"
+        "yiisoft/yii2": "~2.0.42"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "matejch\\pageGuide\\": "src/"
