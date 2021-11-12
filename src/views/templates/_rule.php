@@ -12,7 +12,7 @@
             <label class="control-label"><?= Yii::t('view','element_help') ?></label>
             <textarea name="Guide[rules][][intro]" cols="30" rows="10" class="form-control js-intro"></textarea>
         </div>
-        <div class="w-full mt-2 js-dragzone container-flex-new text-center" style="border: 2px dashed #7f7f7f; height: 50px;justify-content: center">
+        <div class="w-full mt-2 js-dragzone container-flex-new text-center dragzone">
             <?= Yii::t('view','help_4') ?>
         </div>
     </div>

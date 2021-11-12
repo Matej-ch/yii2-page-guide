@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded',() => {
 
     function onDragStart(event) {
         event.dataTransfer.setData('id', event.target.id);
-        console.log(event.target.id);
         event.target.style.backgroundColor = '#8db3f2';
     }
 });

@@ -19,7 +19,7 @@ use yii\web\View;
                 <p><?= Yii::t('view','help_1') ?></p>
                 <p><?= Yii::t('view','help_2') ?></p>
                 <p><?= Yii::t('view','help_3') ?></p>
-                <div class="container-flex-new">
+                <div class="container-flex">
                     <input type="text" id="js-url-input" class="form-control">
                     <?= Html::a(Yii::t('view','goto'),null,['class' => 'btn btn-cloud','id' => 'js-goto-page'])?>
                 </div>
@@ -28,7 +28,7 @@ use yii\web\View;
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
         <?php } ?>
 
-        <div id="js-el-container" class="container-flex-new">
+        <div id="js-el-container" class="container-flex">
             <?php if($model->isNewRecord) { ?>
                 <?= $this->render('partials/_rule',['index' => 0]) ?>
 

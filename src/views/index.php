@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="guide-index mt-20 w-full px-4">
 
-    <?= $this->render('@app/views/templates/_title', ['title' => $this->title]) ?>
+    <h1 class="mt-1 mb-2 text-xl"><?= $this->title ?></h1>
 
     <p>
         <?= Html::a(Yii::t('view','create'), ['create'], ['class' => 'btn btn-success']) ?>
