@@ -28,5 +28,5 @@ $this->params['breadcrumbs'][] = $this->title;
             'url',
             'rules:ntext',
         ],
-    ]); ?>
+    ]) ?>
 </div>
