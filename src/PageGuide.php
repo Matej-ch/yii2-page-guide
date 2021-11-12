@@ -27,8 +27,8 @@ class PageGuide extends Module
             'sourceLanguage' => 'en',
             'basePath' => '@matejch/pageGuide/messages',
             'fileMap' => [
-                'modules/users/view' => 'view.php',
-                'modules/users/model' => 'model.php',
+                '@matejch/pageGuide/messages/view' => 'view.php',
+                '@matejch/pageGuide/messages/model' => 'model.php',
             ],
         ];
     }
