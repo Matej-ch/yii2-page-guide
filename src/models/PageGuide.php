@@ -2,6 +2,7 @@
 
 namespace matejch\pageGuide\models;
 
+use Yii;
 use yii\db\ActiveRecord;
 
 /**
@@ -39,9 +40,9 @@ class PageGuide extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'url' => 'Url',
-            'rules' => 'Rules',
+            'id' => Yii::t('model','ID'),
+            'url' => Yii::t('model','Url'),
+            'rules' => Yii::t('model','Rules'),
         ];
     }
 }

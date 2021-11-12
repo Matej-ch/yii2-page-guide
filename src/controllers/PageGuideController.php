@@ -2,6 +2,7 @@
 
 namespace matejch\pageGuide\controllers;
 
+use matejch\pageGuide\models\PageGuide;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
@@ -91,17 +92,31 @@ class PageGuideController extends Controller
 
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        try {
+            $model = $this->findModel($id);
+        } catch (NotFoundHttpException $e) {
+           Yii::$app->session->setFlash('warning',$e->getMessage());
+            return $this->redirect(['index']);
+        }
+
+        if($model) {
+            $model->delete();
+        }
 
         return $this->redirect(['index']);
     }
 
-    protected function findModel($id)
+    /**
+     * @param $id
+     * @return PageGuide|null
+     * @throws NotFoundHttpException
+     */
+    protected function findModel($id): ?PageGuide
     {
         if (($model = PageGuide::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException('Not found');
+        throw new NotFoundHttpException(Yii::t('view','Not found'));
     }
 }

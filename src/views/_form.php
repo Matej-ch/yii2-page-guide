@@ -16,11 +16,12 @@ use yii\web\View;
         <?php if($model->isNewRecord) { ?>
 
             <div class="w-full max300 py-4 my-4">
-                <p>Vložte url adresu pre ktorú, chcete nastaviť nápovedu</p>
-                <p>Otvorte stránku v novom okne a vyberte elementy pre ktoré chcete vytvoriť nápovedu</p>
+                <p><?= Yii::t('view','help_1') ?></p>
+                <p><?= Yii::t('view','help_2') ?></p>
+                <p><?= Yii::t('view','help_3') ?></p>
                 <div class="container-flex-new">
                     <input type="text" id="js-url-input" class="form-control">
-                    <?= Html::a('Choď na stránku',null,['class' => 'btn btn-cloud','id' => 'js-goto-page'])?>
+                    <?= Html::a(Yii::t('view','goto'),null,['class' => 'btn btn-cloud','id' => 'js-goto-page'])?>
                 </div>
             </div>
 
@@ -42,34 +43,14 @@ use yii\web\View;
         </div>
 
         <div class="px-1 py-1">
-            <?= Html::submitButton('Uložiť', ['class' => 'btn btn-success']) ?>
+            <?= Html::submitButton(Yii::t('view','save'), ['class' => 'btn btn-success']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>
 
     </div>
 
-
-
-    <template id="element-input-template">
-        <div class="w-full max300 well-block px-4 py-4 mx-2 js-dragzone">
-            <div class="w-full">
-                <label class="control-label">Krok</label>
-                <input type="number" step="1" min="1" value="" name="Guide[rules][][step]" class="form-control js-step">
-            </div>
-            <div class="w-full">
-                <label class="control-label">Element na ktorý napojiť návod</label>
-                <input type="text" value="" name="Guide[rules][][element]" class="form-control js-element">
-            </div>
-            <div class="w-full">
-                <label class="control-label">Nápoveda k elementus</label>
-                <textarea name="Guide[rules][][intro]" cols="30" rows="10" class="form-control js-intro"></textarea>
-            </div>
-            <div class="w-full mt-2 js-dragzone container-flex-new text-center" style="border: 2px dashed #7f7f7f; height: 50px;justify-content: center">
-                Presuňte požadovaný element sem
-            </div>
-        </div>
-    </template>
+<?= $this->render('templates/_rule') ?>
 
 <?php
 $scriptGuideForm = <<< JS
