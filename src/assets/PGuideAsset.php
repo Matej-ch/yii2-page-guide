@@ -11,12 +11,12 @@ class PGuideAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
-        'css/_assist.css',
+        'css/assist.min.css',
         'css/introjs.min.css',
     ];
 
     public $js = [
-        'js/_assist.js',
+        'js/assist.js',
         'js/intro.min.js',
 
     ];
