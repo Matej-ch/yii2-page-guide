@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "postcss:watch": "postcss src/web/css/assist.css -o src/web/css/assist.min.css --watch",
-    "postcss:compile": "postcss src/web/css/assist.css -o src/web/css/assist.min.css"
+    "postcss:compile": "postcss src/web/css/assist.css -o src/web/css/assist.min.css",
+    "babel:compile": "babel src/web/js/assist.js -o src/web/js/assist.min.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   },
   "homepage": "https://github.com/Matej-ch/yii2-page-guide#readme",
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-preset-minify": "^0.5.1",
     "cssnano": "^5.0.10",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
