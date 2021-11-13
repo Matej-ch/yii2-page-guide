@@ -7,8 +7,7 @@ use yii\web\View;
 
 class PGuideAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@matejch/pageGuide/web';
 
     public $css = [
         'css/assist.min.css',
