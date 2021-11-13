@@ -29,7 +29,7 @@ class PageGuide extends Module
             Yii::$app->i18n->translations['pageGuide/*'] = [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en',
-                'basePath'       => '@matejch/yii2/audit/messages',
+                'basePath'       => '@matejch/pageGuide/messages',
                 'fileMap' => [
                     '@matejch/pageGuide/messages/view' => 'view.php',
                     '@matejch/pageGuide/messages/model' => 'model.php',
