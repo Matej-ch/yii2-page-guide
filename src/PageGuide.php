@@ -31,24 +31,16 @@ class PageGuide extends Module
                 'sourceLanguage' => 'en',
                 'basePath'       => '@matejch/pageGuide/messages',
                 'fileMap' => [
-                    '@matejch/pageGuide/messages/view' => 'view.php',
-                    '@matejch/pageGuide/messages/model' => 'model.php',
+                    'pageGuide/view' => 'view.php',
+                    'pageGuide/model' => 'model.php',
                 ],
             ];
         }
-        /*Yii::$app->i18n->translations['pageGuide'] = [
-            'class' => 'yii\i18n\PhpMessageSource',
-            'sourceLanguage' => 'en',
-            'basePath' => '@matejch/pageGuide/messages',
-            'fileMap' => [
-                '@matejch/pageGuide/messages/view' => 'view.php',
-                '@matejch/pageGuide/messages/model' => 'model.php',
-            ],
-        ];*/
+
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('@matejch/pageGuide/' . $category, $message, $params, $language);
+        return Yii::t('pageGuide/' . $category, $message, $params, $language);
     }
 }

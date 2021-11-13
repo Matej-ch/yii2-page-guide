@@ -40,9 +40,9 @@ class PageGuide extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('model','ID'),
-            'url' => Yii::t('model','Url'),
-            'rules' => Yii::t('model','Rules'),
+            'id' => Yii::t('pageGuide/model','ID'),
+            'url' => Yii::t('pageGuide/model','Url'),
+            'rules' => Yii::t('pageGuide/model','Rules'),
         ];
     }
 }

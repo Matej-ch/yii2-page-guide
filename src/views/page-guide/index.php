@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('view','page guide');
+$this->title = Yii::t('pageGuide/view','page guide');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="guide-index mt-20 w-full px-4">
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="mt-1 mb-2 text-xl"><?= $this->title ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('view','create'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('pageGuide/view','create'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

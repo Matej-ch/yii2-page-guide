@@ -117,6 +117,6 @@ class PageGuideController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('view','Not found'));
+        throw new NotFoundHttpException(Yii::t('pageGuide/view','Not found'));
     }
 }

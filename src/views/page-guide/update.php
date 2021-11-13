@@ -3,8 +3,8 @@
 /* @var $this yii\web\View */
 /* @var $model \matejch\pageGuide\PageGuide */
 
-$this->title = Yii::t('view','update guide',['id' => $model->id]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('view','page guide'), 'url' => ['index']];
+$this->title = Yii::t('pageGuide/view','update guide',['id' => $model->id]);
+$this->params['breadcrumbs'][] = ['label' => Yii::t('pageGuide/view','page guide'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="guide-update mt-20 w-full px-4">
