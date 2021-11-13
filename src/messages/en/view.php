@@ -14,5 +14,5 @@ return [
     'step' => 'Step',
     'element' => 'Element for linking information',
     'element_help' => 'Assistance for element',
-    'help_4' => 'Moved element fro mother window here'
+    'help_4' => 'Moved element from other window here'
 ];

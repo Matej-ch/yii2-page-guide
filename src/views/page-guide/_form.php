@@ -15,13 +15,13 @@ use yii\web\View;
 
         <?php if($model->isNewRecord) { ?>
 
-            <div class="w-full max300 py-4 my-4">
+            <div class="w-full py-4 my-4">
                 <p><?= Yii::t('pageGuide/view','help_1') ?></p>
                 <p><?= Yii::t('pageGuide/view','help_2') ?></p>
                 <p><?= Yii::t('pageGuide/view','help_3') ?></p>
                 <div class="container-flex">
                     <input type="text" id="js-url-input" class="form-control">
-                    <?= Html::a(Yii::t('pageGuide/view','goto'),null,['class' => 'btn btn-cloud','id' => 'js-goto-page'])?>
+                    <?= Html::a(Yii::t('pageGuide/view','goto'),null,['class' => 'btn btn-primary','id' => 'js-goto-page'])?>
                 </div>
             </div>
 
