@@ -31,3 +31,5 @@ First migrate table, neccesary for saving rules on pages
 
 link to list of rules and form for creating rules is {name of module you use in web.php}/page-guide/index
 
+<?= widget_name::widget(['btnPositionCss' => 'position: fixed;top: 100px;right: 0;']) ?>
+
