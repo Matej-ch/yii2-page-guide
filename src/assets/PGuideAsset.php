@@ -15,7 +15,7 @@ class PGuideAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/assist.js',
+        'js/assist.min.js',
         'js/intro.min.js',
 
     ];
