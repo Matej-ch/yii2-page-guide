@@ -4,7 +4,9 @@ namespace matejch\pageGuide\widget;
 
 use matejch\pageGuide\assets\PGuideAsset;
 use matejch\pageGuide\models\PageGuide;
+use Yii;
 use yii\base\Widget;
+use yii\helpers\Json;
 
 class PageAssist extends Widget
 {
@@ -23,7 +25,13 @@ class PageAssist extends Widget
 
         $view = $this->getView();
         if(isset($guide->rules) && !empty($guide->rules)) {
-            $view->registerJs("window.rules=$guide->rules");
+            $labels = Json::encode([
+                'prevLabel' => Yii::t('pageGuide/view','prev'),
+                'nextLabel' => Yii::t('pageGuide/view','next'),
+                'skipLabel' => Yii::t('pageGuide/view','skip'),
+                'doneLabel' => Yii::t('pageGuide/view','done')
+            ]);
+            $view->registerJs("window.rules=$guide->rules;window.guideLabels=$labels");
         }
 
         PGuideAsset::register($view);

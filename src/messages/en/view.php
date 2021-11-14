@@ -16,5 +16,9 @@ return [
     'element_help' => 'Assistance for element',
     'help_4' => 'Moved element from other window here',
     'rule_element' => 'Element',
-    'intro' => 'Content'
+    'intro' => 'Content',
+    'prev' => 'Previous',
+    'next' => 'Next',
+    'skip' => 'Skip',
+    'done' => 'Done'
 ];

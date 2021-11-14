@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded',() => {
             steps: window.rules || []
         });
 
-        intro.setOption("prevLabel", 'Späť');
-        intro.setOption("nextLabel", 'Ďalej');
-        intro.setOption("skipLabel", 'Preskočiť');
-        intro.setOption("doneLabel",'Ukončiť');
+        intro.setOption("prevLabel",window.guideLabels.prevLabel || 'Prev' );
+        intro.setOption("nextLabel",window.guideLabels.nextLabel || 'Next' );
+        intro.setOption("skipLabel",window.guideLabels.skipLabel || 'Skip' );
+        intro.setOption("doneLabel",window.guideLabels.doneLabel || 'Done' );
         intro.start();
     }
 

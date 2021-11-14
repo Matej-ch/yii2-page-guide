@@ -16,5 +16,9 @@ return [
     'element_help' => 'Nápoveda k elementu',
     'help_4' => 'Presuňte požadovaný element sem',
     'rule_element' => 'Element',
-    'intro' => 'Obsah'
+    'intro' => 'Obsah',
+    'prev' => 'Späť',
+    'next' => 'Ďalej',
+    'skip' => 'Preskočiť',
+    'done' => 'Ukončiť'
 ];
