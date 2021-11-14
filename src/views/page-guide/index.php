@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     foreach ($rules as $rule) {
 
-                        $html = "<div>".
+                        $html .= "<div>".
                             Yii::t('pageGuide/view','step').": {$rule['step']} " .
                             Yii::t('pageGuide/view','rule_element').": {$rule['element']} " .
                             Yii::t('pageGuide/view','intro') . ": {$rule['intro']} </div>";
