@@ -109,3 +109,16 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-blue-500 {
+    color: rgba(59, 130, 246, 1);
+}
+
+#js-intro-guide i {
+    font-style: normal;
+}
