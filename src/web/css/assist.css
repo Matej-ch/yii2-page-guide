@@ -117,3 +117,7 @@
 #js-intro-guide {
     text-decoration: none;
 }
+
+#js-intro-guide:hover {
+    text-decoration: none;
+}
