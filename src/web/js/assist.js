@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded',() => {
 
     function addElement() {
         let tmpl = document.getElementById('element-input-template').content.cloneNode(true);
-        tmpl.querySelector('.js-step').name = 'Guide[rules]['+click+'][step]';
+        tmpl.querySelector('.js-step').name = 'PageGuide[rules]['+click+'][step]';
         tmpl.querySelector('.js-step').value = click + 1;
-        tmpl.querySelector('.js-element').name = 'Guide[rules]['+click+'][element]';
-        tmpl.querySelector('.js-intro').name = 'Guide[rules]['+click+'][intro]';
+        tmpl.querySelector('.js-element').name = 'PageGuide[rules]['+click+'][element]';
+        tmpl.querySelector('.js-intro').name = 'PageGuide[rules]['+click+'][intro]';
         document.getElementById('js-el-container').appendChild(tmpl);
         click++;
     }

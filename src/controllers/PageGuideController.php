@@ -52,15 +52,15 @@ class PageGuideController extends Controller
 
         $post = Yii::$app->request->post();
         if(Yii::$app->request->isPost) {
-            $post['Guide']['url'] = parse_url($post['Guide']['url'],PHP_URL_PATH);
+            $post['PageGuide']['url'] = parse_url($post['PageGuide']['url'],PHP_URL_PATH);
 
-            $post['Guide']['rules'] = array_filter($post['Guide']['rules'], static function ($val) {
+            $post['PageGuide']['rules'] = array_filter($post['PageGuide']['rules'], static function ($val) {
                 return !empty($val['element']);
             });
 
-            $post['Guide']['rules'] = Json::encode($post['Guide']['rules']);
+            $post['PageGuide']['rules'] = Json::encode($post['PageGuide']['rules']);
 
-            PageGuide::deleteAll(['url' => $post['Guide']['url']]);
+            PageGuide::deleteAll(['url' => $post['PageGuide']['url']]);
 
             if ($model->load($post) && $model->save()) {
                 return $this->redirect(['index']);
@@ -78,7 +78,7 @@ class PageGuideController extends Controller
 
         if(Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
-            $post['Guide']['rules'] = Json::encode($post['Guide']['rules']);
+            $post['PageGuide']['rules'] = Json::encode($post['PageGuide']['rules']);
 
             if ($model->load($post) && $model->save()) {
                 return $this->redirect(['index']);
