@@ -113,3 +113,7 @@
 #js-intro-guide i {
     font-style: normal;
 }
+
+#js-intro-guide {
+    text-decoration: none;
+}

@@ -37,7 +37,6 @@ class PageGuide extends Module
                 ],
             ];
         }
-
     }
 
     public static function t($category, $message, $params = [], $language = null)
