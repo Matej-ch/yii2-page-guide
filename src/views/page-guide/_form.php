@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>
 
-            <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'url')->textInput(['maxlength' => true,'class' => 'js-url-form-input']) ?>
         <?php } ?>
 
         <div id="js-el-container" class="container-flex">

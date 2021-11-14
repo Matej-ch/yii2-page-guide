@@ -50,6 +50,12 @@ document.addEventListener('DOMContentLoaded',() => {
         }
     });
 
+    document.querySelector('body').addEventListener('input', e => {
+        if(e.target.id === 'js-url-input') {
+            document.querySelector('.js-url-form-input').value = e.target.value;
+        }
+    })
+
     function addElement() {
         const count = document.querySelectorAll('.js-rule-container').length;
         let tmpl = document.getElementById('element-input-template').content.cloneNode(true);
