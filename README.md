@@ -21,15 +21,39 @@ or add
 
 to the require section of your `composer.json` file.
 
+Setup
+-----
+
+#### 1. First migrate table
+
+it is necessary for saving rules on pages
+
+```php 
+./yii migrate --migrationPath=@vendor/matejch/yii2-page-guide/src/migrations
+```
+
+#### 2. Add to module to your web.php to module part
+
+```php 
+'pageGuide' => [
+    'class' => \matejch\pageGuide\PageGuide::class,
+]
+
+```
+
+#### 3. Add widget on pages you want to use page guide on
+
+```php
+ <?= \matejch\pageGuide\widget\PageAssist::widget() ?>
+```
 
 Usage
 -----
+You can access index and form for creation with 
 
-First migrate table, neccesary for saving rules on pages
+```php 
+{key_of_module_you_use_in_web.php}/page-guide/index
+```
 
-./yii migrate --migrationPath=@vendor/matejch/yii2-page-guide/src/migrations
 
-link to list of rules and form for creating rules is {name of module you use in web.php}/page-guide/index
-
-<?= widget_name::widget(['btnPositionCss' => 'position: fixed;top: 100px;right: 0;']) ?>
 
