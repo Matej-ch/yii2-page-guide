@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Json;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -26,7 +27,24 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'id',
             'url',
-            'rules:ntext',
+            'rules' => [
+                'attribute' => 'rules',
+                'format' => 'html',
+                'value' => static function ($model) {
+                    $rules = Json::decode($model->rules);
+                    $html = '';
+
+                    foreach ($rules as $rule) {
+
+                        $html = "<div>".
+                            Yii::t('pageGuide/view','step').": {$rule['step']} " .
+                            Yii::t('pageGuide/view','rule_element').": {$rule['element']} " .
+                            Yii::t('pageGuide/view','intro') . ": {$rule['intro']} </div>";
+                    }
+
+                    return $html;
+                }
+            ],
         ],
     ]) ?>
 </div>

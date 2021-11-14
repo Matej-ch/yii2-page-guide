@@ -14,5 +14,7 @@ return [
     'step' => 'Krok',
     'element' => 'Element na ktorý napojiť návod',
     'element_help' => 'Nápoveda k elementu',
-    'help_4' => 'Presuňte požadovaný element sem'
+    'help_4' => 'Presuňte požadovaný element sem',
+    'rule_element' => 'Element',
+    'intro' => 'Obsah'
 ];
