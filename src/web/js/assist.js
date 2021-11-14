@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded',() => {
         event.target.style.backgroundColor = '#8db3f2';
     }
 
-    var click = 1;
-
     document.querySelector('body').addEventListener('click',function(e) {
         if(e.target.id === 'js-goto-page') {
             e.preventDefault();
@@ -53,13 +51,13 @@ document.addEventListener('DOMContentLoaded',() => {
     });
 
     function addElement() {
+        const count = document.querySelectorAll('.js-rule-container').length;
         let tmpl = document.getElementById('element-input-template').content.cloneNode(true);
-        tmpl.querySelector('.js-step').name = 'PageGuide[rules]['+click+'][step]';
-        tmpl.querySelector('.js-step').value = click + 1;
-        tmpl.querySelector('.js-element').name = 'PageGuide[rules]['+click+'][element]';
-        tmpl.querySelector('.js-intro').name = 'PageGuide[rules]['+click+'][intro]';
+        tmpl.querySelector('.js-step').name = 'PageGuide[rules]['+count+'][step]';
+        tmpl.querySelector('.js-step').value = count;
+        tmpl.querySelector('.js-element').name = 'PageGuide[rules]['+count+'][element]';
+        tmpl.querySelector('.js-intro').name = 'PageGuide[rules]['+count+'][intro]';
         document.getElementById('js-el-container').appendChild(tmpl);
-        click++;
     }
 
     /* events fired on the drop targets */

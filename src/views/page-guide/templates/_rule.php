@@ -1,5 +1,5 @@
 <template id="element-input-template">
-    <div class="w-full max300 well-block px-4 py-4 mx-2">
+    <div class="w-full max300 well-block px-4 py-4 mx-2 js-rule-container">
         <div class="w-full">
             <label class="control-label"><?= Yii::t('pageGuide/view','step') ?></label>
             <input type="number" step="1" min="1" value="" name="PageGuide[rules][][step]" class="form-control js-step">
