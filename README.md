@@ -87,11 +87,11 @@ also, all elements with form-group class are set.
 
 ------
 
-With widget option _**'element'**_, you can set class name or other valid _css selector_
+With widget option _**'selectors'**_ (array), you can set multiple class names or ids or other valid _css selectors_
 
 for picking draggable elements in creator mode.
 
 ```php 
-<?= \matejch\pageGuide\widget\PageAssist::widget(['element' => '.guide']) ?>
+<?= \matejch\pageGuide\widget\PageAssist::widget(['selectors' => ['.guide','#selectable_id']]) ?>
 
 ```

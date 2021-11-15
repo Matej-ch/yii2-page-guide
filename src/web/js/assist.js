@@ -11,23 +11,27 @@ document.addEventListener('DOMContentLoaded',() => {
             return;
         }
 
-        const inputs = document.querySelectorAll('input:not([type=hidden])');
-        if(inputs) {
-            inputs.forEach(input => {
-                input.setAttribute('draggable','true');
-                input.classList.add('draggable');
-            })
-        }
-
-        if(document.querySelector('form')) {
-            const formGroupEls = document.querySelectorAll('.form-group');
-            if(formGroupEls) {
-                formGroupEls.forEach(el => {
-                    el.setAttribute('draggable','true');
-                    el.classList.add('draggable');
-                });
+        if(window.guideSelectors) {
+            console.log(window.guideSelectors);
+            console.log(typeof window.guideSelectors);
+        } else {
+            const inputs = document.querySelectorAll('input:not([type=hidden])');
+            if(inputs) {
+                inputs.forEach(input => {
+                    input.setAttribute('draggable','true');
+                    input.classList.add('draggable');
+                })
             }
 
+            if(document.querySelector('form')) {
+                const formGroupEls = document.querySelectorAll('.form-group');
+                if(formGroupEls) {
+                    formGroupEls.forEach(el => {
+                        el.setAttribute('draggable','true');
+                        el.classList.add('draggable');
+                    });
+                }
+            }
         }
     }
 

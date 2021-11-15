@@ -12,7 +12,7 @@ class PageAssist extends Widget
 {
     public $btnPositionCss;
 
-    public $element = null;
+    public $selectors = [];
 
     public function init()
     {
@@ -40,11 +40,19 @@ class PageAssist extends Widget
             $view->registerJs("window.guideRules=$guide->rules;window.guideLabels=$labels");
         }
 
+        if(!empty($this->selectors)) {
+            if(is_string($this->selectors)) {
+                $this->selectors = [$this->selectors];
+            }
+            $selectors = Json::encode($this->selectors);
+            $view->registerJs("window.guideSelectors=$selectors");
+        }
+
         PGuideAsset::register($view);
 
         if(!$guide) { return false; }
 
-        return $this->render('_assist',['rules' => $guide->rules,'btnPositionCss' => $this->btnPositionCss]);
+        return $this->render('_assist',['btnPositionCss' => $this->btnPositionCss]);
     }
 
     public function registerTranslations()
