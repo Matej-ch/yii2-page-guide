@@ -7,6 +7,7 @@ use matejch\pageGuide\models\PageGuide;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\Json;
+use yii\web\View;
 
 class PageAssist extends Widget
 {
@@ -45,7 +46,7 @@ class PageAssist extends Widget
                 $this->selectors = [$this->selectors];
             }
             $selectors = Json::encode($this->selectors);
-            $view->registerJs("window.guideSelectors=$selectors");
+            $view->registerJs("window.guideSelectors=$selectors",View::POS_HEAD);
         }
 
         PGuideAsset::register($view);
