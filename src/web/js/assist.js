@@ -7,12 +7,27 @@ document.addEventListener('DOMContentLoaded',() => {
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('guideCreator');
 
-        console.log(myParam);
-
         if(!myParam) {
-            console.log('not guide creator');
-        } else {
-            console.log('guide creator is set',myParam);
+            return;
+        }
+
+        const inputs = document.querySelectorAll('input:not([type=hidden])');
+        if(inputs) {
+            inputs.forEach(input => {
+                input.setAttribute('draggable','true');
+                input.classList.add('draggable');
+            })
+        }
+
+        if(document.querySelector('form')) {
+            const formGroupEls = document.querySelectorAll('.form-group');
+            if(formGroupEls) {
+                formGroupEls.forEach(el => {
+                    el.setAttribute('draggable','true');
+                    el.classList.add('draggable');
+                });
+            }
+
         }
     }
 
