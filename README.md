@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist matejch/yii2-page-guide "dev-master"
+php composer.phar require --prefer-dist matejch/yii2-page-guide "^1.0"
 ```
 
 or add
 
 ```
-"matejch/yii2-page-guide": "dev-master"
+"matejch/yii2-page-guide": "^1.0"
 ```
 
 to the require section of your `composer.json` file.

@@ -2,6 +2,7 @@
     "name": "matejch/yii2-page-guide",
     "description": "Ability to add guide to pages for user orientation",
     "type": "yii2-extension",
+    "version": "1.0.0",
     "keywords": ["yii2","extension","guide"],
     "license": "MIT",
     "authors": [
@@ -10,8 +11,8 @@
             "email": "matejCH.work@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
+        "php": ">=7.2.0",
         "yiisoft/yii2": "~2.0.42"
     },
     "repositories": [
