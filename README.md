@@ -1,4 +1,4 @@
-Page guide extension WIP
+Page guide extension
 ====================
 Ability to add guide or assistant to pages for better user orientation or explaining functionality to user
 

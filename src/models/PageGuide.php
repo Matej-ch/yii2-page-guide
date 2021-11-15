@@ -31,6 +31,8 @@ class PageGuide extends ActiveRecord
             [['url'], 'required'],
             [['rules'], 'string'],
             [['url'], 'string', 'max' => 1024],
+            [['url'], 'trim'],
+            [['url'],'filter','filter'=>'strip_tags','skipOnArray' => true]
         ];
     }
 
