@@ -95,3 +95,7 @@ for picking draggable elements in creator mode.
 <?= \matejch\pageGuide\widget\PageAssist::widget(['selectors' => ['.guide','#selectable_id']]) ?>
 
 ```
+
+
+Here is example how it looks, when rules are set and user can display guide/assistant
+![](readme/Contact%20with%20guide.png)
