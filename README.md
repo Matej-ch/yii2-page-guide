@@ -1,6 +1,6 @@
 Page guide extension WIP
 ====================
-Ability to add guide to pages for user orientation
+Ability to add guide or assistant to pages for better user orientation or explaining functionality to user
 
 Installation
 ------------
@@ -32,7 +32,7 @@ it is necessary for saving rules on pages
 ./yii migrate --migrationPath=@vendor/matejch/yii2-page-guide/src/migrations
 ```
 
-#### 2. Add to module to your web.php to module part
+#### 2. Add to modules in your web.php
 
 ```php 
 'pageGuide' => [
@@ -43,13 +43,13 @@ it is necessary for saving rules on pages
 
 #### 3. Add widget on pages you want to use page guide on
 
-It can be rendered on the bottom of the page
+By default it is rendered in place you put widget on
 
 ```php
  <?= \matejch\pageGuide\widget\PageAssist::widget() ?>
 ```
 
-Or if you want it to be positioned on right top side
+If you want it to be positioned on right top side, use widget option **_'btnPositionCss'_**
 
 ```php 
 <?= \matejch\pageGuide\widget\PageAssist::widget(['btnPositionCss' => 'position: fixed;top: 100px;right: -2px;']) ?>
@@ -58,14 +58,14 @@ Or if you want it to be positioned on right top side
 
 Usage
 -----
-You can access index and form for creation with 
+Access index and form for creation of rules with 
 
 ```php 
 {key_of_module_you_use_in_web.php}/page-guide/index
 ```
 #### 1. Create new set of rules
 
-insert url into first input
+Insert url on your yii web page into first input
 
 Press button go to page that opens url in new window
 
@@ -74,8 +74,24 @@ From this window drag and drop elements you want to use into previous window
 You can also set it by hand, just add step number, element id and text
 
 check image of page guide form
-![](readme/Screenshot%202021-11-15%20at%2017-27-42%20Create%20page%20guide.png)
+![](readme/Create%20page%20guide.png)
 
 
 #### 2. Add widget to the page you want to use it on
 
+When you are in creator mode, every draggable element is highlighted with blue dashed border
+
+By default, in creator mode all visible input elements on page are set as draggable, and if form is detected on page
+
+also, all elements with form-group class are set.
+
+------
+
+With widget option _**'element'**_, you can set class name or other valid _css selector_
+
+for picking draggable elements in creator mode.
+
+```php 
+<?= \matejch\pageGuide\widget\PageAssist::widget(['element' => '.guide']) ?>
+
+```
