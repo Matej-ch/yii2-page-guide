@@ -13,16 +13,15 @@ document.addEventListener('DOMContentLoaded',() => {
 
         if(window.guideSelectors) {
             const selectors = window.guideSelectors;
-            //Object.values(selectors)
-            window.guideSelectors.forEach(selector => {
-                let elements = document.querySelectorAll('selector');
+            for (const [_, selector] of Object.entries(selectors)) {
+                let elements = document.querySelectorAll(`${selector}`);
                 if(elements) {
                     elements.forEach(el => {
                         el.setAttribute('draggable','true');
                         el.classList.add('draggable');
                     })
                 }
-            })
+            }
         } else {
             const inputs = document.querySelectorAll('input:not([type=hidden])');
             if(inputs) {
