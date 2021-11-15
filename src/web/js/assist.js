@@ -75,7 +75,19 @@ document.addEventListener('DOMContentLoaded',() => {
     }, false);
 
     function onDragStart(event) {
-        event.dataTransfer.setData('id', event.target.id);
+        if(event.target.id.length) {
+            event.dataTransfer.setData('selector', `#${event.target.id}`);
+        } else {
+            const classNames = event.target.classList;
+            let selector = '';
+            classNames.forEach(className => {
+                if(className !== 'draggable') {
+                    selector += `.${className}`;
+                }
+            })
+            event.dataTransfer.setData('selector', selector);
+        }
+
         event.target.style.backgroundColor = '#8db3f2';
     }
 
@@ -141,9 +153,9 @@ document.addEventListener('DOMContentLoaded',() => {
     }, false);
 
     function onDrop(event) {
-        const id = event.dataTransfer.getData('id');
+        const selector = event.dataTransfer.getData('selector');
         const dropzone = event.target;
-        dropzone.parentElement.querySelector('.js-element').value = "#" + id;
+        dropzone.parentElement.querySelector('.js-element').value = selector;
         addElement();
     }
 });
