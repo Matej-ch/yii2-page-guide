@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded',() => {
             return;
         }
 
+        console.log(window);
+        console.log(window.guideSelectors);
         if(window.guideSelectors) {
             console.log(window.guideSelectors);
             console.log(typeof window.guideSelectors);
