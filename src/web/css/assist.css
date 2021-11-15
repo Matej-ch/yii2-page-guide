@@ -121,3 +121,7 @@
 #js-intro-guide:hover {
     text-decoration: none;
 }
+
+.draggable:hover {
+    border: 2px dashed #6495ed;
+}

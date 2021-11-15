@@ -63,14 +63,19 @@ You can access index and form for creation with
 ```php 
 {key_of_module_you_use_in_web.php}/page-guide/index
 ```
+#### 1. Create new set of rules
 
-#### 1. Add it to the page you want to use it
+insert url into first input
 
-#### 2. Create new set of rules
+Press button go to page that opens url in new window
 
-insert url into input
+From this window drag and drop elements you want to use into previous window
 
-Press button go to page that opens in new window
+You can also set it by hand, just add step number, element id and text
 
-From this window drag and drop elements you want to use
+check image of page guide form
+![](readme/Screenshot%202021-11-15%20at%2017-27-42%20Create%20page%20guide.png)
+
+
+#### 2. Add widget to the page you want to use it on
 
