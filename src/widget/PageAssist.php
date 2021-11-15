@@ -12,6 +12,8 @@ class PageAssist extends Widget
 {
     public $btnPositionCss;
 
+    public $element = null;
+
     public function init()
     {
         parent::init();
@@ -35,7 +37,7 @@ class PageAssist extends Widget
                 'skipLabel' => Yii::t('pageGuide/view','skip'),
                 'doneLabel' => Yii::t('pageGuide/view','done')
             ]);
-            $view->registerJs("window.rules=$guide->rules;window.guideLabels=$labels");
+            $view->registerJs("window.guideRules=$guide->rules;window.guideLabels=$labels");
         }
 
         PGuideAsset::register($view);

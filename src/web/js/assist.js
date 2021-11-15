@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded',() => {
 
+    setCreatorMode();
+
+    function setCreatorMode()
+    {
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('guideCreator');
+
+        console.log(myParam);
+
+        if(!myParam) {
+            console.log('not guide creator');
+        } else {
+            console.log('guide creator is set',myParam);
+        }
+    }
+
     document.querySelector('body').addEventListener('click',e => {
         if(e.target.id === 'js-intro-guide') {
             e.preventDefault();
@@ -10,7 +26,7 @@ document.addEventListener('DOMContentLoaded',() => {
     function startIntro() {
         const intro = introJs();
         intro.setOptions({
-            steps: window.rules || []
+            steps: window.guideRules || []
         });
 
         intro.setOption("prevLabel",window.guideLabels.prevLabel || 'Prev' );
