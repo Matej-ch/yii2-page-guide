@@ -15,7 +15,7 @@ class PGuideAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/assist.min.js',
+        YII_ENV_DEV ? 'js/assist.js' : 'js/assist.min.js',
         'js/intro.min.js',
 
     ];

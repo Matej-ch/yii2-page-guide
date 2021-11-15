@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded',() => {
         }
 
         if(window.guideSelectors) {
+            const selectors = window.guideSelectors;
+            //Object.values(selectors)
             window.guideSelectors.forEach(selector => {
                 let elements = document.querySelectorAll('selector');
                 if(elements) {
