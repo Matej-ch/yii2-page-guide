@@ -11,11 +11,16 @@ document.addEventListener('DOMContentLoaded',() => {
             return;
         }
 
-        console.log(window);
-        console.log(window.guideSelectors);
         if(window.guideSelectors) {
-            console.log(window.guideSelectors);
-            console.log(typeof window.guideSelectors);
+            window.guideSelectors.forEach(selector => {
+                let elements = document.querySelectorAll('selector');
+                if(elements) {
+                    elements.forEach(el => {
+                        el.setAttribute('draggable','true');
+                        el.classList.add('draggable');
+                    })
+                }
+            })
         } else {
             const inputs = document.querySelectorAll('input:not([type=hidden])');
             if(inputs) {
