@@ -21,7 +21,7 @@ class PGuideAsset extends AssetBundle
     ];
 
     public $jsOptions = [
-        'position' => View::POS_HEAD,
+        'position' => View::POS_READY,
     ];
 
     public $depends = [];
