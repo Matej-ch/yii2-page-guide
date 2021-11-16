@@ -3,7 +3,6 @@
 namespace matejch\pageGuide\assets;
 
 use yii\web\AssetBundle;
-use yii\web\View;
 
 class PGuideAsset extends AssetBundle
 {
@@ -18,10 +17,6 @@ class PGuideAsset extends AssetBundle
         'js/assist.min.js',
         'js/intro.min.js',
 
-    ];
-
-    public $jsOptions = [
-        'position' => View::POS_READY,
     ];
 
     public $depends = [];

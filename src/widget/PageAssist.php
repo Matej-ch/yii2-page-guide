@@ -38,7 +38,7 @@ class PageAssist extends Widget
                 'skipLabel' => Yii::t('pageGuide/view','skip'),
                 'doneLabel' => Yii::t('pageGuide/view','done')
             ]);
-            $view->registerJs("window.guideRules=$guide->rules;window.guideLabels=$labels",View::POS_READY);
+            $view->registerJs("window.guideRules=$guide->rules;window.guideLabels=$labels");
         }
 
         if(!empty($this->selectors)) {
@@ -46,7 +46,7 @@ class PageAssist extends Widget
                 $this->selectors = [$this->selectors];
             }
             $selectors = Json::encode($this->selectors);
-            $view->registerJs("window.guideSelectors=$selectors",View::POS_READY);
+            $view->registerJs("window.guideSelectors=$selectors",View::POS_HEAD);
         }
 
         PGuideAsset::register($view);
