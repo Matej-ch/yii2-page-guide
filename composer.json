@@ -13,7 +13,8 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "yiisoft/yii2": "~2.0.42"
+        "yiisoft/yii2": "~2.0.42",
+        "bower-asset/intro.js": "^2.9"
     },
     "repositories": [
         {
