@@ -29,10 +29,10 @@ class PageGuide extends Module
     {
         if (Yii::$app->has('i18n')) {
             Yii::$app->i18n->translations['pageGuide/*'] = [
-                'class'          => 'yii\i18n\PhpMessageSource',
+                'class' => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en',
                 'forceTranslation' => true,
-                'basePath'       => '@matejch/pageGuide/messages',
+                'basePath'  => '@matejch/pageGuide/messages',
                 'fileMap' => [
                     'pageGuide/view' => 'view.php',
                     'pageGuide/model' => 'model.php',

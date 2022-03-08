@@ -10,12 +10,10 @@ class PGuideAsset extends AssetBundle
 
     public $css = [
         'css/assist.min.css',
-        'css/introjs.min.css',
     ];
 
     public $js = [
         'js/assist.min.js',
-        'js/intro.min.js',
 
     ];
 
