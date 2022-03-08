@@ -2,6 +2,7 @@
 
 namespace matejch\pageGuide;
 
+use matejch\pageGuide\assets\IntrojsAsset;
 use matejch\pageGuide\assets\PGuideAsset;
 use Yii;
 use yii\base\Module;
@@ -16,9 +17,10 @@ class PageGuide extends Module
     {
         parent::init();
 
-        \Yii::setAlias('@matejch/pageGuide', __DIR__);
+        Yii::setAlias('@matejch/pageGuide', __DIR__);
 
         PGuideAsset::register(Yii::$app->view);
+        IntrojsAsset::register(Yii::$app->view);
 
         $this->registerTranslations();
     }
