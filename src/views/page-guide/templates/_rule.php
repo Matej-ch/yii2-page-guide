@@ -16,6 +16,6 @@
             <?= Yii::t('pageGuide/view','help_4') ?>
         </div>
 
-        <a href="#" class="absolute text-red-800 cursor-pointer top-1 right-1 js-remove-el">&times;</a>
+        <a href="#" class="absolute text-red-800 cursor-pointer top-0 right-1 js-remove-el font-bold text-2xl">&times;</a>
     </div>
 </template>
