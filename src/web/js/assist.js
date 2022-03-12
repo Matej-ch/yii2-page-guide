@@ -136,7 +136,15 @@ document.addEventListener('DOMContentLoaded',() => {
     })
 
     function addElement() {
-        const count = document.querySelectorAll('.js-rule-container').length;
+
+        const stepsElements = document.querySelectorAll('.js-rule-container');
+        const count = stepsElements.length;
+
+        const lastEl = stepsElements[count-1];
+        if(!lastEl.querySelector('.js-element').value.length) {
+            return;
+        }
+
         let tmpl = document.getElementById('element-input-template').content.cloneNode(true);
         tmpl.querySelector('.js-step').name = 'PageGuide[rules]['+count+'][step]';
         tmpl.querySelector('.js-step').value = count + 1;
