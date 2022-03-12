@@ -103,7 +103,30 @@ document.addEventListener('DOMContentLoaded',() => {
                 }
             }
         }
+
+        if(e.target.classList.contains('js-remove-el')) {
+            e.preventDefault();
+            e.target.closest('.js-rule-container').remove();
+
+            updateSteps(e);
+        }
     });
+
+    function updateSteps(e)
+    {
+        const stepElementsContainers = e.target.closest('#js-el-container').querySelectorAll('.js-rule-container');
+
+        let step = 0;
+        stepElementsContainers.forEach(container => {
+
+            container.querySelector('.js-step').name = 'PageGuide[rules]['+step+'][step]';
+            container.querySelector('.js-step').value = step + 1;
+            container.querySelector('.js-element').name = 'PageGuide[rules]['+step+'][element]';
+            container.querySelector('.js-intro').name = 'PageGuide[rules]['+step+'][intro]';
+
+            step++;
+        })
+    }
 
     document.querySelector('body').addEventListener('input', e => {
         if(e.target.id === 'js-url-input') {

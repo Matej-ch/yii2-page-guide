@@ -2,6 +2,7 @@
 
 namespace matejch\pageGuide\widget;
 
+use matejch\pageGuide\assets\IntrojsAsset;
 use matejch\pageGuide\assets\PGuideAsset;
 use matejch\pageGuide\models\PageGuide;
 use Yii;
@@ -50,6 +51,7 @@ class PageAssist extends Widget
         }
 
         PGuideAsset::register($view);
+        IntrojsAsset::register($view);
 
         if(!$guide) { return false; }
 

@@ -125,3 +125,26 @@
 .draggable:hover {
     border: 2px dashed #6495ed;
 }
+
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+
+.text-red-800 {
+    color: rgb(153 27 27);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.top-1 {
+    top: 0.25rem;
+}
+
+.right-1 {
+    right: 0.25rem;
+}
