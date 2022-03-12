@@ -106,15 +106,16 @@ document.addEventListener('DOMContentLoaded',() => {
 
         if(e.target.classList.contains('js-remove-el')) {
             e.preventDefault();
+            const stepsContainer = e.target.closest('#js-el-container');
             e.target.closest('.js-rule-container').remove();
 
-            updateSteps(e);
+            updateSteps(stepsContainer);
         }
     });
 
-    function updateSteps(e)
+    function updateSteps(stepsContainer)
     {
-        const stepElementsContainers = e.target.closest('#js-el-container').querySelectorAll('.js-rule-container');
+        const stepElementsContainers = stepsContainer.querySelectorAll('.js-rule-container');
 
         let step = 0;
         stepElementsContainers.forEach(container => {
