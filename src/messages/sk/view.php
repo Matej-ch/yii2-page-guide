@@ -20,5 +20,6 @@ return [
     'prev' => 'Späť',
     'next' => 'Ďalej',
     'skip' => 'Preskočiť',
-    'done' => 'Ukončiť'
+    'done' => 'Ukončiť',
+    'Rules not set' => 'Musíte nastaviť aspoň jeden krok'
 ];

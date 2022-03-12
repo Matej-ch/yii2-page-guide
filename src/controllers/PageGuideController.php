@@ -52,11 +52,22 @@ class PageGuideController extends Controller
 
         $post = Yii::$app->request->post();
         if(Yii::$app->request->isPost) {
+
+            $origUrl = $post['PageGuide']['url'];
+
             $post['PageGuide']['url'] = parse_url($post['PageGuide']['url'],PHP_URL_PATH);
 
             $post['PageGuide']['rules'] = array_filter($post['PageGuide']['rules'], static function ($val) {
                 return !empty($val['element']);
             });
+
+            if(empty($post['PageGuide']['rules'])) {
+                $model->url = $origUrl;
+                return $this->render('create', [
+                    'model' => $model,
+                    'rulesError' => Yii::t('pageGuide/view','Rules not set')
+                ]);
+            }
 
             $post['PageGuide']['rules'] = Json::encode($post['PageGuide']['rules']);
 
@@ -78,6 +89,18 @@ class PageGuideController extends Controller
 
         if(Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
+
+            $post['PageGuide']['rules'] = array_filter($post['PageGuide']['rules'], static function ($val) {
+                return !empty($val['element']);
+            });
+
+            if(empty($post['PageGuide']['rules'])) {
+                return $this->render('update', [
+                    'model' => $model,
+                    'rulesError' => Yii::t('pageGuide/view','Rules not set')
+                ]);
+            }
+
             $post['PageGuide']['rules'] = Json::encode($post['PageGuide']['rules']);
 
             if ($model->load($post) && $model->save()) {

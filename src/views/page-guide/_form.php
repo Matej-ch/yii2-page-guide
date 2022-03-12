@@ -29,6 +29,13 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'url')->textInput(['maxlength' => true,'class' => 'js-url-form-input form-control']) ?>
         <?php } ?>
 
+        <?php if(isset($rulesError) && !empty($rulesError)) { ?>
+            <div class="w-full font-bold text-2xl text-red-800">
+                <?= $rulesError ?>
+            </div>
+        <?php } ?>
+
+
         <div id="js-el-container" class="container-flex">
             <?php if($model->isNewRecord) { ?>
                 <?= $this->render('partials/_rule',['index' => 0]) ?>

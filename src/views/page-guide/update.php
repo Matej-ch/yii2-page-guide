@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'rulesError' => $rulesError ?? null
     ]) ?>
 
 </div>

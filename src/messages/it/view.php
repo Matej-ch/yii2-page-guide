@@ -20,5 +20,6 @@ return [
     'prev' => 'Precedente',
     'next' => 'Successivo',
     'skip' => 'Salta',
-    'done' => 'Fine'
+    'done' => 'Fine',
+    'Rules not set' => 'Rules not set'
 ];
