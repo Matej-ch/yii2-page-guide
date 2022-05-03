@@ -21,5 +21,4 @@ return [
     'next' => 'Ďalej',
     'skip' => 'Preskočiť',
     'done' => 'Ukončiť',
-    'Rules not set' => 'Musíte nastaviť aspoň jeden krok'
 ];

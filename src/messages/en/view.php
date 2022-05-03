@@ -21,5 +21,4 @@ return [
     'next' => 'Next',
     'skip' => 'Skip',
     'done' => 'Done',
-    'Rules not set' => 'At least one rule step must be set'
 ];

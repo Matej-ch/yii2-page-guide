@@ -21,5 +21,4 @@ return [
     'next' => 'Successivo',
     'skip' => 'Salta',
     'done' => 'Fine',
-    'Rules not set' => 'Rules not set'
 ];
