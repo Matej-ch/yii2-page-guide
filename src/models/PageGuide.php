@@ -50,7 +50,7 @@ class PageGuide extends ActiveRecord
                 $this->rules = Json::decode($this->rules);
             } catch (Exception $e) {
                 $this->rules = '{}';
-                $this->addError('rules', 'Invalid rule format');
+                $this->addError('rules', Yii::t('pageGuide/model', 'Rules not valid'));
                 return;
             }
         }
@@ -60,13 +60,13 @@ class PageGuide extends ActiveRecord
         });
         if (empty($this->rules)) {
             $this->rules = '{}';
-            $this->addError('rules', Yii::t('pageGuide/view', 'Rules not set'));
+            $this->addError('rules', Yii::t('pageGuide/model', 'Rules not set'));
             return;
         }
 
         foreach ($this->rules as $rule) {
             if (!is_array($rule) || !isset($rule['step'], $rule['element'], $rule['intro'])) {
-                $this->addError('rules', Yii::t('pageGuide/view', 'Invalid rule format'));
+                $this->addError('rules', Yii::t('pageGuide/model', 'Rules not valid'));
                 break;
             }
         }
