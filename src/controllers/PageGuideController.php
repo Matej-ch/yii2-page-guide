@@ -16,11 +16,11 @@ class PageGuideController extends Controller
     public function behaviors()
     {
         return [
-            'access' =>[
+            'access' => [
                 'class' => AccessControl::class,
                 'rules' => [
                     [
-                        'actions' => ['index','update','create','delete'],
+                        'actions' => ['index', 'update', 'create', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ]
@@ -51,28 +51,8 @@ class PageGuideController extends Controller
         $model = new PageGuide();
 
         $post = Yii::$app->request->post();
-        if(Yii::$app->request->isPost) {
-
-            $origUrl = $post['PageGuide']['url'];
-
-            $post['PageGuide']['url'] = parse_url($post['PageGuide']['url'],PHP_URL_PATH);
-
-            $post['PageGuide']['rules'] = array_filter($post['PageGuide']['rules'], static function ($val) {
-                return !empty($val['element']);
-            });
-
-            if(empty($post['PageGuide']['rules'])) {
-                $model->url = $origUrl;
-                return $this->render('create', [
-                    'model' => $model,
-                    'rulesError' => Yii::t('pageGuide/view','Rules not set')
-                ]);
-            }
-
-            $post['PageGuide']['rules'] = Json::encode($post['PageGuide']['rules']);
-
+        if (Yii::$app->request->isPost) {
             PageGuide::deleteAll(['url' => $post['PageGuide']['url']]);
-
             if ($model->load($post) && $model->save()) {
                 return $this->redirect(['index']);
             }
@@ -86,30 +66,18 @@ class PageGuideController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if(Yii::$app->request->isPost) {
+        $rulesError = '';
+        if (Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
-
-            $post['PageGuide']['rules'] = array_filter($post['PageGuide']['rules'], static function ($val) {
-                return !empty($val['element']);
-            });
-
-            if(empty($post['PageGuide']['rules'])) {
-                return $this->render('update', [
-                    'model' => $model,
-                    'rulesError' => Yii::t('pageGuide/view','Rules not set')
-                ]);
-            }
-
-            $post['PageGuide']['rules'] = Json::encode($post['PageGuide']['rules']);
 
             if ($model->load($post) && $model->save()) {
                 return $this->redirect(['index']);
             }
+            $rulesError = $model->getFirstError('rules');
         }
-
         return $this->render('update', [
             'model' => $model,
+            'rulesError' => $rulesError,
         ]);
     }
 
@@ -118,11 +86,11 @@ class PageGuideController extends Controller
         try {
             $model = $this->findModel($id);
         } catch (NotFoundHttpException $e) {
-           Yii::$app->session->setFlash('warning',$e->getMessage());
+            Yii::$app->session->setFlash('warning', $e->getMessage());
             return $this->redirect(['index']);
         }
 
-        if($model) {
+        if ($model) {
             $model->delete();
         }
 
@@ -140,6 +108,6 @@ class PageGuideController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('pageGuide/view','Not found'));
+        throw new NotFoundHttpException(Yii::t('pageGuide/view', 'Not found'));
     }
 }
