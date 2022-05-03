@@ -43,6 +43,9 @@ class PageGuide extends ActiveRecord
         ];
     }
 
+    /**
+     * validator: validate rules data
+     */
     public function validateRuleFormat($attribute, $params, $validator): void
     {
         if (!is_array($this->rules)) {
@@ -70,13 +73,13 @@ class PageGuide extends ActiveRecord
                 break;
             }
         }
-        Json::encode($this->rules);
+        $this->rules = Json::encode($this->rules);
     }
 
     /**
-     * Order the rule on step value
+     * filter: order rules on step value
      */
-    public function stepOrder(string $value): array
+    public function stepOrder(string $value): string
     {
         $value = Json::decode($value);
         $keys = array_column($value, 'step');
