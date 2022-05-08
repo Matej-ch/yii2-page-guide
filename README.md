@@ -1,3 +1,5 @@
+![latest_tag](https://badgen.net/github/tag/Matej-ch/yii2-page-guide)
+
 Page guide extension
 ====================
 Ability to add guide or assistant to pages for better user orientation or explaining functionality to user
