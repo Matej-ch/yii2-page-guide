@@ -2,8 +2,9 @@
 
 /** @var int $index */
 
-?>
+use yii\helpers\Html;
 
+?>
 
 <div class="w-full max300 well-block px-4 py-4 mx-2 js-rule-container relative">
     <div class="w-full">
@@ -13,6 +14,16 @@
     <div class="w-full">
         <label class="control-label"><?= Yii::t('pageGuide/view','element') ?></label>
         <input type="text" value="<?= $rule['element'] ?? '' ?>" name="PageGuide[rules][<?= $index ?>][element]" class="form-control js-element">
+    </div>
+    <div class="w-full">
+        <label class="control-label"><?= Yii::t('pageGuide/view','position') ?></label>
+        <?= Html::dropDownList("PageGuide[rules][$index][position]",
+            $rule['position'] ?? 'bottom', [
+                'right' => Yii::t('pageGuide/view','right'),
+                'left' => Yii::t('pageGuide/view','left'),
+                'bottom' => Yii::t('pageGuide/view','bottom'),
+                'top' => Yii::t('pageGuide/view','top')
+            ], ['class' => 'form-control js-position']) ?>
     </div>
     <div class="w-full">
         <label class="control-label"><?= Yii::t('pageGuide/view','element_help') ?></label>
