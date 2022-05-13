@@ -21,4 +21,9 @@ return [
     'next' => 'Successivo',
     'skip' => 'Salta',
     'done' => 'Fine',
+    'position' => 'Posizione',
+    'right' => 'Right',
+    'left' => 'Left',
+    'bottom' => 'Bottom',
+    'top' => 'Top'
 ];

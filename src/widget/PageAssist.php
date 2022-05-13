@@ -7,6 +7,7 @@ use matejch\pageGuide\assets\PGuideAsset;
 use matejch\pageGuide\models\PageGuide;
 use Yii;
 use yii\base\Widget;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\web\View;
 
@@ -15,6 +16,8 @@ class PageAssist extends Widget
     public $btnPositionCss;
 
     public $selectors = [];
+
+    public $introOptions = [];
 
     public function init()
     {
@@ -39,7 +42,10 @@ class PageAssist extends Widget
                 'skipLabel' => Yii::t('pageGuide/view','skip'),
                 'doneLabel' => Yii::t('pageGuide/view','done')
             ]);
-            $view->registerJs("window.guideRules=$guide->rules;window.guideLabels=$labels");
+
+            $options = Json::encode(ArrayHelper::merge($this->introOptions,['steps' => Json::decode($guide->rules)]));
+
+            $view->registerJs("window.guideRules=$options;window.guideLabels=$labels");
         }
 
         if(!empty($this->selectors)) {

@@ -21,4 +21,9 @@ return [
     'next' => 'Ďalej',
     'skip' => 'Preskočiť',
     'done' => 'Ukončiť',
+    'position' => 'Pozícia',
+    'right' => 'Vpravo',
+    'left' => 'Vľavo',
+    'bottom' => 'Dole',
+    'top' => 'Hore'
 ];
