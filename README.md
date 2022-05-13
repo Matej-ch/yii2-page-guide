@@ -19,14 +19,14 @@ or add
 "matejch/yii2-page-guide": "^1.0"
 ```
 
-to the require section of your `composer.json` file.
+to the requirement section of your `composer.json` file.
 
 Setup
 -----
 
 #### 1. First migrate table
 
-it is necessary for saving rules on pages
+It is necessary for saving rules on pages
 
 ```php 
 ./yii migrate --migrationPath=@vendor/matejch/yii2-page-guide/src/migrations
@@ -43,7 +43,7 @@ it is necessary for saving rules on pages
 
 #### 3. Add widget on pages you want to use page guide on
 
-By default it is rendered in place you put widget on
+By default, it is rendered in place you put widget on
 
 ```php
  <?= \matejch\pageGuide\widget\PageAssist::widget() ?>
@@ -56,6 +56,16 @@ If you want it to be positioned on right top side, use widget option **_'btnPosi
 
 ```
 
+### 4. Additional intro options from intro.js library
+
+If you want you can add intro.js option into widget with attribute `introOptions`
+
+More options here [intro.js](https://introjs.com/docs/examples/customizing/html-tooltip) 
+```php 
+<?= \matejch\pageGuide\widget\PageAssist::widget(['introOptions' => ['showProgress' => true] ]) ?>
+
+```
+
 Usage
 -----
 Access index and form for creation of rules with 
@@ -63,6 +73,7 @@ Access index and form for creation of rules with
 ```php 
 {key_of_module_you_use_in_web.php}/page-guide/index
 ```
+
 #### 1. Create new set of rules
 
 Insert url on your yii web page into first input

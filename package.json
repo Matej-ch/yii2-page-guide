@@ -1,6 +1,6 @@
 {
   "name": "yii2-page-guide",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Page guide extension\r ====================\r Ability to add guide to pages for user orientation",
   "main": "",
   "scripts": {
