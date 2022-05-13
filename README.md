@@ -1,4 +1,5 @@
 ![latest_tag](https://badgen.net/github/tag/Matej-ch/yii2-page-guide)
+![wiki](https://badgen.net/badge/icon/wiki?icon=wiki&label)
 
 Page guide extension
 ====================
