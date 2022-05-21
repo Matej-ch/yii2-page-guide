@@ -68,7 +68,7 @@ class PageAssist extends Widget
             $jsString = "window.guideRules=$options;window.guideLabels=$labels;";
             if(!empty($this->introCallbacks)) {
                 $callbacks = $this->filterCallbacks();
-                $jsString = "window.guideCallbacks=$callbacks";
+                $jsString .= "window.guideCallbacks=$callbacks";
             }
 
             $view->registerJs($jsString);
