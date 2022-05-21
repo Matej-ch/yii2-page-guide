@@ -9,6 +9,7 @@ use Yii;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
+use yii\web\JsExpression;
 use yii\web\View;
 
 class PageAssist extends Widget
@@ -17,7 +18,26 @@ class PageAssist extends Widget
 
     public $selectors = [];
 
+    /**
+     * Array of additional intro.js options
+     *
+     * @var array
+     */
     public $introOptions = [];
+
+    /**
+     * Array of callbacks usable in intro.js
+     * Available callbacks
+     *      oncomplete
+     *      onexit
+     *      onbeforeexit
+     *      onchange
+     *      onbeforechange
+     *      onafterchange
+     *
+     * @var array
+     */
+    public $introCallbacks = [];
 
     public function init()
     {
@@ -45,7 +65,13 @@ class PageAssist extends Widget
 
             $options = Json::encode(ArrayHelper::merge($this->introOptions,['steps' => Json::decode($guide->rules)]));
 
-            $view->registerJs("window.guideRules=$options;window.guideLabels=$labels");
+            $jsString = "window.guideRules=$options;window.guideLabels=$labels;";
+            if(!empty($this->introCallbacks)) {
+                $callbacks = $this->filterCallbacks();
+                $jsString .= "window.guideCallbacks=$callbacks";
+            }
+
+            $view->registerJs($jsString);
         }
 
         if(!empty($this->selectors)) {
@@ -78,5 +104,22 @@ class PageAssist extends Widget
                 ],
             ];
         }
+    }
+
+    private function filterCallbacks(): string
+    {
+        return Json::encode(array_intersect_key($this->introCallbacks,array_flip($this->allowedCallbacks())));
+    }
+
+    private function allowedCallbacks(): array
+    {
+        return [
+            'oncomplete',
+            'onexit',
+            'onbeforeexit',
+            'onchange',
+            'onbeforechange',
+            'onafterchange',
+        ];
     }
 }

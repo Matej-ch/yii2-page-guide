@@ -1,5 +1,5 @@
 ![latest_tag](https://badgen.net/github/tag/Matej-ch/yii2-page-guide)
-![https://github.com/Matej-ch/yii2-page-guide/wiki](https://badgen.net/badge/icon/wiki?icon=wiki&label)
+![wiki](https://badgen.net/badge/icon/wiki?icon=wiki&label)
 
 Page guide extension
 ====================
@@ -66,6 +66,18 @@ If you want you can add intro.js option into widget with attribute `introOptions
 More options here [intro.js](https://introjs.com/docs/examples/customizing/html-tooltip) 
 ```php 
 <?= \matejch\pageGuide\widget\PageAssist::widget(['introOptions' => ['showProgress' => true] ]) ?>
+
+```
+### 5. Optional
+
+Widget now also supports intro.js callbacks
+
+Available callbacks are `oncomplete` `onexit` `onbeforeexit` `onchange` `onbeforechange` `onafterchange`
+
+```php 
+<?= \matejch\pageGuide\widget\PageAssist::widget(['introCallbacks' => [
+    'onchange' => new \yii\web\JsExpression("function (targetElement) { alert('next step'); }")]
+]) ?>
 
 ```
 
