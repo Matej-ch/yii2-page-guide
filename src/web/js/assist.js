@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded',() => {
         intro.setOption("doneLabel",window.guideLabels.doneLabel || 'Done' );
 
         if(window.guideCallbacks) {
-            console.log(window.guideCallbacks)
+            Object.keys(window.guideCallbacks).forEach(key => {
+                intro[key](window.guideCallbacks[key]);
+            })
         }
 
         intro.start();

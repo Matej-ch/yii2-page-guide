@@ -75,7 +75,9 @@ Widget now also supports intro.js callbacks
 Available callbacks are `oncomplete` `onexit` `onbeforeexit` `onchange` `onbeforechange` `onafterchange`
 
 ```php 
-<?= \matejch\pageGuide\widget\PageAssist::widget(['introCallbacks' => ['onchange' => ] ]) ?>
+<?= \matejch\pageGuide\widget\PageAssist::widget(['introCallbacks' => [
+    'onchange' => new \yii\web\JsExpression("function (targetElement) { alert('next step'); }")]
+]) ?>
 
 ```
 
