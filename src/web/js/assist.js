@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded',() => {
         intro.setOption("nextLabel",window.guideLabels.nextLabel || 'Next' );
         intro.setOption("skipLabel",window.guideLabels.skipLabel || 'Skip' );
         intro.setOption("doneLabel",window.guideLabels.doneLabel || 'Done' );
+
+        if(window.guideCallbacks) {
+            console.log(window.guideCallbacks)
+        }
+
         intro.start();
     }
 
