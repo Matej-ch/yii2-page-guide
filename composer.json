@@ -13,8 +13,7 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "yiisoft/yii2": "~2.0.42",
-        "bower-asset/intro.js": "^2.9"
+        "yiisoft/yii2": "~2.0.42"
     },
     "repositories": [
         {
@@ -30,6 +29,11 @@
     "autoload-dev": {
         "psr-4": {
             "matejch\\pageGuide\\tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     }
 }

@@ -13,6 +13,7 @@ return [
     'help_3' => 'Na stránkach ktorých chcete vytvoriť pomocníka musí mať widget PageAssist z adresára widget',
     'step' => 'Krok',
     'element' => 'Element na ktorý napojiť návod',
+    'element_title' => 'Titulok nápovedy',
     'element_help' => 'Nápoveda k elementu',
     'help_4' => 'Presuňte požadovaný element sem',
     'rule_element' => 'Element',

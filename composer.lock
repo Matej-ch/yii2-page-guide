@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afa6df6d62a33e19ab9c824eb65fd244",
+    "content-hash": "76db5ced5d41b04da589cd5075db3b6c",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -28,26 +28,11 @@
             ]
         },
         {
-            "name": "bower-asset/intro.js",
-            "version": "v2.9.3",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:usablica/intro.js.git",
-                "reference": "b46bbcd8af46be2ae3b43aba850334b12ff03cdb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/usablica/intro.js/zipball/b46bbcd8af46be2ae3b43aba850334b12ff03cdb",
-                "reference": "b46bbcd8af46be2ae3b43aba850334b12ff03cdb"
-            },
-            "type": "bower-asset"
-        },
-        {
             "name": "bower-asset/jquery",
             "version": "3.6.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
             },
             "dist": {
@@ -470,5 +455,5 @@
         "php": ">=7.2.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
