@@ -14,6 +14,7 @@ return [
     'step' => 'Krok',
     'element' => 'Element na který napojit návod',
     'element_help' => 'Nápověda k elementu',
+    'element_title' => 'Titulek nápovedy',
     'help_4' => 'Přesuňte požadovaný element sem',
     'rule_element' => 'Element',
     'intro' => 'Obsah',

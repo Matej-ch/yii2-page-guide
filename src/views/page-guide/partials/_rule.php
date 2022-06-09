@@ -25,6 +25,12 @@ use yii\helpers\Html;
                 'top' => Yii::t('pageGuide/view','top')
             ], ['class' => 'form-control js-position']) ?>
     </div>
+
+    <div class="w-full">
+        <label class="control-label"><?= Yii::t('pageGuide/view','element_title') ?></label>
+        <input name="PageGuide[rules][<?= $index ?>][title]" value="<?= $rule['title'] ?? '' ?>" class="form-control js-title">
+    </div>
+
     <div class="w-full">
         <label class="control-label"><?= Yii::t('pageGuide/view','element_help') ?></label>
         <textarea name="PageGuide[rules][<?= $index ?>][intro]" cols="30" rows="10" class="form-control js-intro"><?= $rule['intro'] ?? '' ?></textarea>

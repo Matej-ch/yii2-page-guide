@@ -13,6 +13,7 @@ return [
     'help_3' => 'Every page you want to use for creating page guides must have widget PageAssist on it from widget directory',
     'step' => 'Step',
     'element' => 'Element for linking information',
+    'element_title' => 'Assistance title',
     'element_help' => 'Assistance for element',
     'help_4' => 'Moved element from other window here',
     'rule_element' => 'Element',

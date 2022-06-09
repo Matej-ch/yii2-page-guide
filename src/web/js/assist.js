@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
         intro.setOption("prevLabel",window.guideLabels.prevLabel || 'Prev' );
         intro.setOption("nextLabel",window.guideLabels.nextLabel || 'Next' );
-        intro.setOption("skipLabel",window.guideLabels.skipLabel || 'Skip' );
+        intro.setOption("skipLabel", '×');
         intro.setOption("doneLabel",window.guideLabels.doneLabel || 'Done' );
 
         if(window.guideCallbacks) {
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded',() => {
             container.querySelector('.js-step').name = 'PageGuide[rules]['+step+'][step]';
             container.querySelector('.js-step').value = step + 1;
             container.querySelector('.js-position').name = 'PageGuide[rules]['+step+'][position]';
+            container.querySelector('.js-title').name = 'PageGuide[rules]['+step+'][title]';
             container.querySelector('.js-element').name = 'PageGuide[rules]['+step+'][element]';
             container.querySelector('.js-intro').name = 'PageGuide[rules]['+step+'][intro]';
 
@@ -155,6 +156,7 @@ document.addEventListener('DOMContentLoaded',() => {
         tmpl.querySelector('.js-step').name = 'PageGuide[rules]['+count+'][step]';
         tmpl.querySelector('.js-step').value = count + 1;
         tmpl.querySelector('.js-position').name = 'PageGuide[rules]['+count+'][position]';
+        tmpl.querySelector('.js-title').name = 'PageGuide[rules]['+count+'][title]';
         tmpl.querySelector('.js-element').name = 'PageGuide[rules]['+count+'][element]';
         tmpl.querySelector('.js-intro').name = 'PageGuide[rules]['+count+'][intro]';
         document.getElementById('js-el-container').appendChild(tmpl);

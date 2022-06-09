@@ -2,7 +2,7 @@
     "name": "matejch/yii2-page-guide",
     "description": "Ability to add guide to pages for user orientation",
     "type": "yii2-extension",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "keywords": ["yii2","extension","guide"],
     "license": "MIT",
     "authors": [
@@ -13,8 +13,7 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "yiisoft/yii2": "~2.0.42",
-        "bower-asset/intro.js": "^2.9"
+        "yiisoft/yii2": "~2.0.42"
     },
     "repositories": [
         {
@@ -30,6 +29,11 @@
     "autoload-dev": {
         "psr-4": {
             "matejch\\pageGuide\\tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     }
 }

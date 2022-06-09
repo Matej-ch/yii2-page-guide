@@ -14,6 +14,7 @@ return [
     'step' => 'Passo',
     'element' => 'Elemento per collegare le informazioni',
     'element_help' => 'Assistenza per l\'elemento',
+    'element_title' => 'Assistance title',
     'help_4' => 'Muovere l\'elemento dall\'altra finestra qui',
     'rule_element' => 'Elemento',
     'intro' => 'Contenuto',

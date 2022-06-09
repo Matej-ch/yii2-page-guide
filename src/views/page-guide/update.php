@@ -1,9 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model \matejch\pageGuide\PageGuide */
+/* @var $model \matejch\pageGuide\models\PageGuide*/
 
-$this->title = Yii::t('pageGuide/view','update guide',['id' => $model->id]);
+$this->title = Yii::t('pageGuide/view','update guide',['id' => $model->url]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('pageGuide/view','page guide'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
