@@ -6,13 +6,15 @@ use yii\web\AssetBundle;
 
 class IntrojsAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower-asset/intro.js/minified/';
-
     public $css = [
-        'introjs.min.css',
+        'https://cdn.jsdelivr.net/npm/intro.js@5.1.0/introjs.css',
     ];
 
     public $js = [
-        'intro.min.js',
+        'https://cdn.jsdelivr.net/npm/intro.js@5.1.0/intro.min.js',
+    ];
+
+    public $jsOptions = [
+        'defer' => 'defer',
     ];
 }
